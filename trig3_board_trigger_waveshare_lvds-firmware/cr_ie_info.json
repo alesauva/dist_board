@@ -1,0 +1,22 @@
+{
+	"system" : {
+		"platform" : "linux64",
+		"os_name" : "Scientific Linux",
+		"os_version" : ""
+	},
+	"error" : {
+		"executable" : "quartus",
+		"comment" : "not_applicable",
+		"error_message" : "is_selected()",
+		"source_file" : "/quartus/edt/gedq/gedq_symbol.cpp",
+		"line" : "2303",
+		"stack_trace" : "\t0x7fad64367ad3: edt_gedq + 0xe9ad3 (_ZN11GEDQ_SYMBOL22on_l_button_second_clkEP9GEDQ_VIEWRK6QPoint + 0x57)\n\t0x7fad6439a3b8: edt_gedq + 0x11c3b8 (_ZN19GEDQ_SELECTION_MODE14do_button_downE6QFlagsIN2Qt16KeyboardModifierEERK6QPointb + 0x2b2)\n\t0x7fad6439a6a4: edt_gedq + 0x11c6a4 (_ZN19GEDQ_SELECTION_MODE16on_l_button_downE6QFlagsIN2Qt16KeyboardModifierEERK6QPoint + 0x72)\n\t0x7fad64338af3: edt_gedq + 0xbaaf3 (_ZN9GEDQ_VIEW15mousePressEventEP11QMouseEvent + 0x127)\n\t0x7fadce7e237b: QtGui.so.4 + 0x26337b (_ZN7QWidget5eventEP6QEvent + 0x46b)\n\t0x7fadce783e4f: QtGui.so.4 + 0x204e4f (_ZN19QApplicationPrivate13notify_helperEP7QObjectP6QEvent + 0xaf)\n\t0x7fadce78a6d3: QtGui.so.4 + 0x20b6d3 (_ZN12QApplication6notifyEP7QObjectP6QEvent + 0x3b3)\n\t0x7fadf522c5b4: QtCore.so.4 + 0x1a65b4 (_ZN16QCoreApplication14notifyInternalEP7QObjectP6QEvent + 0x84)\n\t0x7fadce7870c5: QtGui.so.4 + 0x2080c5 (_ZN19QApplicationPrivate14sendMouseEventEP7QWidgetP11QMouseEventS1_S1_PS1_R8QPointerIS0_Eb + 0x135)\n\t0x7fadce80ac89: QtGui.so.4 + 0x28bc89\n\t0x7fadce809993: QtGui.so.4 + 0x28a993 (_ZN12QApplication15x11ProcessEventEP7_XEvent + 0xe03)\n\t0x7fadce834d32: QtGui.so.4 + 0x2b5d32\n\t0x7fadc74e0119: glib-2.0.so.0 + 0x4c119 (g_main_context_dispatch + 0x159)\n\t0x7fadc74e0478: glib-2.0.so.0 + 0x4c478\n\t0x7fadc74e052c: glib-2.0.so.0 + 0x4c52c (g_main_context_iteration + 0x2c)\n\t0x7fadf525f505: QtCore.so.4 + 0x1d9505 (_ZN20QEventDispatcherGlib13processEventsE6QFlagsIN10QEventLoop17ProcessEventsFlagEE + 0x65)\n\t0x7fadce83487f: QtGui.so.4 + 0x2b587f\n\t0x7fadf522b5c5: QtCore.so.4 + 0x1a55c5 (_ZN10QEventLoop13processEventsE6QFlagsINS_17ProcessEventsFlagEE + 0x35)\n\t0x7fadf522b998: QtCore.so.4 + 0x1a5998 (_ZN10QEventLoop4execE6QFlagsINS_17ProcessEventsFlagEE + 0x128)\n\t0x7fadf52307c4: QtCore.so.4 + 0x1aa7c4 (_ZN16QCoreApplication4execEv + 0xb4)\n\t   0x401ea8: quartus + 0x1ea8 (_Z8qgq_mainiPPKc + 0x68)\n\t0x7fadd409a720: ccl_msg + 0x40720 (_Z15msg_main_threadPv + 0x10)\n\t0x7fadd13f202c: ccl_thr + 0x602c (thr_final_wrapper + 0xc)\n\t0x7fadd409a7df: ccl_msg + 0x407df (_Z18msg_thread_wrapperPFPvS_ES_ + 0x62)\n\t0x7fadd1a63559: ccl_mem + 0xa559 (_Z18mem_thread_wrapperPFPvS_ES_ + 0x99)\n\t0x7fadd1830f92: ccl_err + 0x8f92 (_Z18err_thread_wrapperPFPvS_ES_ + 0x27)\n\t0x7fadd13f23f2: ccl_thr + 0x63f2 (thr_thread_wrapper + 0x15)\n\t0x7fadd409c7e2: ccl_msg + 0x427e2 (_Z12msg_exe_mainiPPKcPFiiS1_E + 0xa3)\n\t   0x401f7a: quartus + 0x1f7a (main + 0x26)\n\t0x7fadc86d0555: c.so.6 + 0x22555 (__libc_start_main + 0xf5)\n\t   0x401d59: quartus + 0x1d59\n",
+		"subsystem" : "GEDQ"
+	},
+	"quartus" : {
+		"quartus_bits" : "64",
+		"version" : "18.0.0",
+		"build" : "614",
+		"edition" : "Lite Edition"
+	}
+}
