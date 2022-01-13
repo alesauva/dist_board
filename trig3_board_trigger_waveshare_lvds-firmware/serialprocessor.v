@@ -3,7 +3,7 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	phasecounterselect,phaseupdown,phasestep,scanclk, clkswitch,
 	histos, resethist, activeclock,
 	setseed, seed, prescale, dorolling, dead_time,
-	io_top_extra, triggermask, triggernumber, clockCounter
+	io_top_extra, triggermask, triggernumber, clockCounter, triggerFired
 	);
 	
 	input clk;
@@ -36,7 +36,8 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	output reg[7:0] histostosend=0; // the board from which to get histos
 	output reg[63:0] triggermask=64'hffffffffffffffff; // start with all bits unmasked
 	output reg[7:0] triggernumber=2; // Trigger to use //Antoine
-	input reg[31:0] clockCounter; // Counter for number of triggers fired (mcarrigan)
+	input reg[55:0] clockCounter; // Counter for number of triggers fired (mcarrigan)
+	input reg[7:0] triggerFired; // Trigger most recently fired by board (mcarrigan)
 	
 	input reg[31:0] histos[8];
 	output reg resethist;
@@ -175,16 +176,12 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 				state=READ;
 			end
 		end
-		else if (readdata==16) begin // read out number of clock cycles since start
-			//ioCountToSend = 32;
-			//i=0; while (i<32) begin
-			//	data[i]=clockCounter[i/4][8*i%32 +:8]; // testing mcarrigan
-			//	i=i+1;
-			//end
-			//state=WRITE1;	
-			ioCountToSend = 4;
-			i=0; while (i<4) begin
-				data[i]=clockCounter[8*i +:8]; // selects 8 bits starting at bit 8*i%32
+		else if (readdata==16) begin // read out number of clock cycles since start	
+			ioCountToSend = 8;
+			
+			i=0; while (i<8) begin
+				if (i < 7) data[i]=clockCounter[8*i +:8]; // selects 8 bits starting at bit 8*i%32
+				else data[i]=triggerFired[8*(i-7) +:8];
 				i=i+1;
 			end
 			state=RESETHIST;
